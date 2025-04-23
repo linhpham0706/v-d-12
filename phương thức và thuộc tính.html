@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thay đổi thuộc tính CSS bằng DOM Class</title>
+<style>
+  .initial-style {
+    background-color: lightblue;
+    color: black;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .changed-bg {
+    background-color: rgb(168, 119, 221);
+  }
+
+  .changed-color {
+    color: green;
+  }
+
+  .larger-font {
+    font-size: 20px;
+  }
+
+  .more-padding {
+    padding: 20px;
+  }
+
+  .italic-text {
+    font-style: italic; /* Định nghĩa kiểu chữ nghiêng */
+  }
+</style>
+</head>
+<body>
+
+<div id="myElement" class="initial-style">demo về các thao tác với class</div>
+
+<button id="changeButton">click</button>
+
+<script>
+  var element = document.getElementById("myElement");
+  var changeButton = document.getElementById("changeButton");
+
+  changeButton.onclick = function() {
+    element.classList.toggle("changed-bg");
+    element.classList.toggle("changed-color");
+    element.classList.toggle("larger-font");
+    element.classList.toggle("more-padding");
+    element.classList.toggle("italic-text"); // Thêm hoặc xóa class italic-text
+  };
+</script>
+
+</body>
+</html>
